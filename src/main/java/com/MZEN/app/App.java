@@ -1,6 +1,9 @@
 package com.MZEN.app;
 
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -40,8 +43,19 @@ public class App
         WebElement input_user = driver.findElement(By.cssSelector("input[type='text']"));
         WebElement input_pass = driver.findElement(By.cssSelector("input[type='password']"));
 
-        input_user.sendKeys(args[0]);
-        input_pass.sendKeys(args[1]);
+        String user = "";
+        String pass = "";
+
+        try{
+        BufferedReader bf = new BufferedReader(new FileReader(args[0]));
+        user = bf.readLine();
+        pass = bf.readLine();
+        bf.close();
+        }catch(Exception ex) {
+            
+        }
+        input_user.sendKeys(user);
+        input_pass.sendKeys(pass);
 
         WebElement submitButton = driver.findElement(By.cssSelector("button[type='submit']"));
 
@@ -53,7 +67,7 @@ public class App
         while(true) {
             // Wait for load
             try{
-                Thread.sleep(3000);
+                Thread.sleep(5000);
             } catch (Exception e) {
                 System.out.println("An error occured.");
             }
