@@ -32,5 +32,6 @@ This will create a web browser that reads through your assignment, watches your 
 You may want to set videos at 2 time speed for the process to finish faster.
 
 ### Developers
+The source code is availiable in the branch src-main.
+
 If you wish to contribute to the source, you may clone the src-main branch, make the modifications, and issue a pull request. We will assume that if you know how to code for the project, you know how to use Git or a VCS to handle it yourself.
-However, if you are meeting with issues, you can make an issue request in the Github.
